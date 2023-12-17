@@ -22,7 +22,7 @@ class State(BaseModel, Base):
             from models import storage
             new_list = []
 
-            for key, value in storage._FileStorage__objects:
+            for key, value in storage._FileStorage__objects.items():
                 if value.__class__.__name__ == 'City':
                     if value.state_id == self.id:
                         new_list.append(value)
